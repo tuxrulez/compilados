@@ -14,6 +14,7 @@ echo "
 		5 - ${bold}Muffato${normal}
 		6 - ${bold}Armazem Paraiba${normal}
 		7 - ${bold}Agiplan${normal}
+		8 - ${bold}Web Assai${normal}
 		----------- "
 echo -n "	Qual servidor: "; read srv
 echo -n "	Qual usuario: "; read user
@@ -50,6 +51,9 @@ if [ $? == "1" ]; then
 else
 	ssh -l $user 192.168.0.238
 fi
+;;
+	8) echo "Acesso ao Assai: "
+	ssh 54.173.182.202 -l $user -i /home/radiob/.ssh/AssaiSite.pem
 ;;
 	*) echo "Erro"
 	exit 0
